@@ -3,31 +3,27 @@ import docx2txt
 import warnings
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+
 warnings.filterwarnings('ignore')
 
-# load the data
-resume = docx2txt.process('data/resumedata/Vignesh R.docx')
-job = docx2txt.process('data/JD.docx')   
+def calculate_similarity(resume_file, jd_file):
+    # Convert uploaded files to text
+    resume = docx2txt.process(resume_file.name)
+    jd = docx2txt.process(jd_file.name)
 
-text = [resume, job]
+    text = [resume, jd]
 
-def transform(text):
     cv = CountVectorizer()
-    count_matrix = cv.fit_transform(text)     # Transforming the text into matrix
-# get the percentage
-    matchpercentage = cosine_similarity(count_matrix)[0][1]
-    matchpercentage = round(matchpercentage*100,2)
-    return matchpercentage
+    count_matrix = cv.fit_transform(text)
+    # Calculate the percentage
+    match_percentage = cosine_similarity(count_matrix)[0][1]
+    match_percentage = round(match_percentage * 100, 2)
 
-input_1 = gr.inputs.File(file_count="single", type="file", label= 'Upload the Resume (.pdf)', optional=False)
-input_2 = gr.inputs.File(file_count="single", type="file", label= 'Upload the Job Description (.txt)', optional=False)
+    return f'Your Resume matches {match_percentage}% to the job description!'
 
-title = "Resume Screener"
-description = "Upload your resume(.pdf) and the job description(.txt) and let the sentence similarity model display the similarity percentage !!!"
 
-iface = gr.Interface( 
-    transform,
-    [input_1, input_2], "label", title = title, description = description)
+iface = gr.Interface(fn=calculate_similarity,
+                     inputs=[gr.inputs.File(label="Upload Resume"), gr.inputs.File(label="Upload Job Description")],
+                     outputs="text")
 
-if __name__ == "__main__":
-    iface.launch()
+iface.launch()

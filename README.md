@@ -4,6 +4,8 @@ A resume keyword scanner is a piece of software that job posting sites use to se
 
 For submission to websites that make use of applicant tracking software, online resumes should be optimized. A generic resume will not be as effective as one that has been tailored to use ATS. You should discover methods to naturally add ATS keywords into your application because your resume must be simple to read for actual people.
 
+> ### So, this project  will help the job seekers and HR's to Match their Resume according to the Job Description.
+
 ## Installation:
 	Pip install gradio
  	Pip install docx2text

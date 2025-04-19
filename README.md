@@ -69,7 +69,7 @@ resume-matcher/
 ├── screenshots/            # Optional: Add images for README
 └── README.md
 
-##🧠 How It Works
+## 🧠 How It Works
 User uploads a .docx resume and pastes a job description.
 
 App uses NLP and a custom tech keyword list to extract meaningful keywords.
@@ -79,7 +79,7 @@ Cosine similarity is calculated between resume and JD keyword vector.
 Score is shown with highlighted matches and misses.
 
 
-##📌 Customization
+## 📌 Customization
 You can update the core technical keyword list in app.py under:
 
 python:
@@ -89,13 +89,13 @@ TECH_KEYWORDS = {
 }
 You can also tweak logic to include or exclude specific roles, phrases, or technologies.
 
-##🤝 Contributing
+## 🤝 Contributing
 Contributions, issues and feature requests are welcome! Feel free to fork this project and submit a PR.
 
-##📄 License
+## 📄 License
 This project is licensed under the MIT License.
 
-##🙌 Acknowledgements
+## 🙌 Acknowledgements
 spaCy
 
 NLTK
@@ -106,7 +106,7 @@ Bootstrap
 
 docx2txt
 
-##💡 Future Enhancements
+## 💡 Future Enhancements
 PDF resume support
 
 Keyword category breakdown

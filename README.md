@@ -1,50 +1,120 @@
-# ResuMatch: A Resume Matching Python Project with Gradio Front-End
+# 🧠 Resume Matcher Web App
 
-Welcome to the ResuMatch GitHub repository! This project is a Python-based solution that leverages Gradio for creating a user-friendly front-end interface for resume matching. ResuMatch aims to streamline the process of connecting job seekers with suitable employment opportunities by matching their resumes with job descriptions.
+This is a smart **Resume vs Job Description Matcher** web application built with **Flask**, **spaCy**, **scikit-learn**, and **NLTK**. The app analyzes a `.docx` resume against a pasted job description, extracts and compares technical keywords, and calculates a **match score** using **cosine similarity**. It also highlights matched and unmatched keywords for better clarity.
 
-## Project Overview
+---
 
-ResuMatch consists of the following key components:
+## 🚀 Features
 
-- **Gradio Front-End:** An intuitive user interface powered by Gradio, allowing users to upload their resumes and job descriptions seamlessly.
-- **Resume Matching Engine:** A Python backend that utilizes techniques such as text processing, vectorization, and cosine similarity to match resumes with job descriptions.
-- **Data Preparation and Cleansing:** Preprocessing of both resumes and job descriptions to ensure accurate matching and relevant results.
-- **Interactive Visualizations:** Displaying matched results and similarity scores for a more transparent understanding of the match quality.
+- 🔍 Extracts key **technical terms** from job descriptions and resumes
+- 🤖 Uses **NLP (spaCy)** for chunking & named entity recognition
+- 📊 Calculates a **match percentage** using cosine similarity
+- ✨ Highlights **matched** and **unmatched** terms visually
+- 🌗 Includes **Dark Mode** for better UX
+- 📄 Accepts `.docx` resume file uploads
 
-## Installation
+---
 
-To run ResuMatch locally, follow these steps:
+## 🛠️ Tech Stack
 
-1. Clone this repository: `git clone https://github.com/yourusername/ResuMatch.git`
-2. Navigate to the project directory: `cd ResuMatch`
-3. Install required dependencies: `pip install -r requirements.txt`
-4. Run the application: `python app.py`
+- Backend: [Python](https://www.python.org/), [Flask](https://flask.palletsprojects.com/)
+- NLP: [spaCy](https://spacy.io/), [NLTK](https://www.nltk.org/)
+- ML: [scikit-learn](https://scikit-learn.org/)
+- Frontend: [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5), [Bootstrap 5](https://getbootstrap.com/)
 
-Your local instance of ResuMatch should now be accessible through your web browser at `http://localhost:7878`.
+---
 
-## Usage
+## 📸 Screenshots
 
-1. Open your web browser and access `http://localhost:7878` after running the application.
-2. Upload your resume and the job description you want to match.
-3. The matching engine will process the documents and display the match results along with similarity scores.
-4. Explore the matched results and consider the displayed similarity scores for evaluating the matches.
+| Upload & Paste JD | Results Page |
+|-------------------|--------------|
+| ![Upload Screenshot](screenshots/upload.png) | ![Result Screenshot](screenshots/result.png) |
 
-## Contributing
+---
 
-We welcome contributions from the community! If you'd like to contribute to ResuMatch, please follow these steps:
+## ⚙️ Installation
 
-1. Fork the repository.
-2. Create a new branch for your feature/bugfix: `git checkout -b feature-name`
-3. Make your changes and commit them: `git commit -m "Add feature/fix bug"`
-4. Push your changes to your fork: `git push origin feature-name`
-5. Open a pull request from your fork's branch to the main repository's `main` branch.
+1. **Clone the repository**
+git clone https://github.com/yourusername/resume-matcher.git
+cd resume-matcher
 
-## License
+2. **Create a virtual environment**
 
-This project is licensed under the [MIT License](LICENSE).
+python -m venv venv
+source venv/bin/activate   # On Windows use: venv\Scripts\activate
 
-## Contact
+3. **Install dependencies**
+pip install -r requirements.txt
 
-For questions or feedback, please contact [Hariprasath M S](mailto:hariprasathrmhss@gmail.com).
 
-Happy resume matching with ResuMatch!
+4. **Download spacy model**
+python -m spacy download en_core_web_sm
+
+
+5. **Run the app**
+python app.py
+
+6. **Visit the browser**
+http://127.0.0.1:5000/
+
+## 📂 Project Structure
+resume-matcher/
+│
+├── app.py                  # Flask app
+├── requirements.txt        # Dependencies
+├── templates/
+│   ├── index.html
+│   └── result.html
+├── static/                 # Optional: CSS or JS files
+├── screenshots/            # Optional: Add images for README
+└── README.md
+
+##🧠 How It Works
+User uploads a .docx resume and pastes a job description.
+
+App uses NLP and a custom tech keyword list to extract meaningful keywords.
+
+Cosine similarity is calculated between resume and JD keyword vector.
+
+Score is shown with highlighted matches and misses.
+
+
+##📌 Customization
+You can update the core technical keyword list in app.py under:
+
+python:
+
+TECH_KEYWORDS = {
+    'python', 'etl', 'ab initio', 'data modeling', ...
+}
+You can also tweak logic to include or exclude specific roles, phrases, or technologies.
+
+##🤝 Contributing
+Contributions, issues and feature requests are welcome! Feel free to fork this project and submit a PR.
+
+##📄 License
+This project is licensed under the MIT License.
+
+##🙌 Acknowledgements
+spaCy
+
+NLTK
+
+scikit-learn
+
+Bootstrap
+
+docx2txt
+
+##💡 Future Enhancements
+PDF resume support
+
+Keyword category breakdown
+
+Multi-language support
+
+Upload JD as a file
+
+
+
+

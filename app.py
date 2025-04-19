@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import docx2txt
 import re
 import spacy
+spacy.cli.download("en_core_web_sm")
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords

@@ -6,6 +6,7 @@ spacy.cli.download("en_core_web_sm")
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
+import nltk
 try:
     nltk.data.find("corpora/stopwords")
 except LookupError:

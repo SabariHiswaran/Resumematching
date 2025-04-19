@@ -12,6 +12,7 @@ docx2txt = "^0.8"
 spacy = "^3.7.2"
 scikit-learn = "^1.4.2"
 nltk = "^3.8.1"
+numpy = "1.24.4" 
 
 [tool.poetry.dev-dependencies]
 

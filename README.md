@@ -28,7 +28,7 @@ This is a smart **Resume vs Job Description Matcher** web application built with
 
 | Upload & Paste JD | Results Page |
 |-------------------|--------------|
-| ![Upload Screenshot](screenshot/Screenshot 2025-04-19 114904.png) | ![Result Screenshot](screenshot/Screenshot 2025-04-19 114956.png) |
+| ![Upload Screenshot](screenshot/index.png) | ![Result Screenshot](screenshot/result.png) |
 
 ---
 
